@@ -12,25 +12,21 @@ required_packages <- c(
   "tidyr"
 )
 
-# 定义依赖包加载函数
 load_required_packages <- function(packages) {
   missing_packages <- packages[
     !vapply(packages, requireNamespace, logical(1), quietly = TRUE)
   ]
-
-  # 若存在未安装包，则直接停止运行并给出清晰提示。
   if (length(missing_packages) > 0) {
     stop(
       paste0(
-        "以下 R 包尚未安装：",
+        "R packages not installed：",
         paste(missing_packages, collapse = ", "),
-        "\n请先安装缺失包后重新运行脚本。"
+        "\n please install first."
       ),
       call. = FALSE
     )
   }
 
-  # 若所有依赖包均已存在，则逐个加载并抑制启动提示信息。
   invisible(
     purrr::walk(
       packages,
