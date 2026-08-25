@@ -3,7 +3,7 @@ library(dplyr)
 library(forcats)
 library(tidyverse)
 
-ite_values <- read.csv("中间分析结果数据/ite_values.csv")
+ite_values <- read.csv("ite_values.csv")
 
 ite_summary <- ite_values %>%
   summarise(
