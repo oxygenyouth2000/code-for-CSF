@@ -3,8 +3,6 @@ library(grf)
 library(caret)
 library(dplyr)
 
-df_imputed <- read.xlsx("分析结果数据/df_imputed.xlsx")
-
 x_vars <- c(
   "sex", "age", "BMI", "smoking_status", "drinking_status",
   "hypertension", "diabetes", "stroke", "hypercholesterolemia",
