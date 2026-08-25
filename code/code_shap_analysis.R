@@ -11,8 +11,8 @@ pfun <- function(object, newdata) {
   as.numeric(predict(object, as.matrix(newdata))$predictions)
 }
 
-csf_fit <- readRDS("中间分析结果数据/csf_fit.rds")
-df_imputed <- read.xlsx("分析结果数据/df_imputed.xlsx")
+csf_fit <- readRDS("csf_fit.rds")
+df_imputed <- read.xlsx("df_imputed.xlsx")
 
 x_vars <- c(
   "sex", "age", "BMI", "smoking_status", "drinking_status",
