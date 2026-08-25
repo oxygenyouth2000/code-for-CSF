@@ -3,16 +3,6 @@ rm(list = ls())
 # ------------------------------ #
 # Clinical rule analysis based on CART
 # ------------------------------ #
-# 本脚本基于当前研究已经生成的个体化治疗效应（ITE），
-# 参考 Komura et al. (2025) 的 two-step pragmatic subgroup discovery 框架：
-# 1. 第一步已由现有 CSF 模型完成，即估计每位患者的 ITE；
-# 2. 第二步在高度可解释的临床变量上进行重编码，并用 CART 对 ITE 进行分组发现；
-# 3. 之后在每个临床亚组或 CART 终端节点内，按照当前设定的权重策略与 RMST difference 口径，
-#    估计 beta-blocker 相对不用药的 36 个月 RMST 差值及其 95%CI；
-# 4. 最终输出：
-#    - 临床可解释变量的重编码表；
-#    - CART 树图与终端节点结果表；
-#    - 五个临床变量分层后的森林图与统计表。
 
 required_packages <- c(
   "caret",
